@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/patternrecognition.iml" filepath="$PROJECT_DIR$/.idea/modules/patternrecognition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/patternrecognition_main.iml" filepath="$PROJECT_DIR$/.idea/modules/patternrecognition_main.iml" group="patternrecognition" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/patternrecognition_test.iml" filepath="$PROJECT_DIR$/.idea/modules/patternrecognition_test.iml" group="patternrecognition" />
+    </modules>
+  </component>
+</project>
