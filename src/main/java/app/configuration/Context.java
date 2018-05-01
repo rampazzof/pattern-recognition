@@ -4,15 +4,16 @@ import app.model.Point;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Configuration
 public class Context {
 
     @Bean
-    public Set<Point> getSpace() {
-        return new HashSet<>();
+    public List< Point > getSpace() {
+        return new ArrayList<>();
     }
 
 }

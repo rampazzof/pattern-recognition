@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Set;
+import java.util.List;
 
 @RestController
 public class SpaceController {
 
     @Autowired
-    private Set<Point> space;
+    private List< Point > space;
 
     @GetMapping( "/space" )
-    public ResponseEntity< Set< Point > > getSpace() {
+    public ResponseEntity< List< Point > > getSpace() {
 
         return new ResponseEntity<>( space, HttpStatus.OK );
 
