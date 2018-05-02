@@ -17,7 +17,7 @@ public class LineController {
     @Autowired
     private Calculator calculator;
 
-    @GetMapping( "/space/{n}" )
+    @GetMapping( "/line/{n}" )
     public ResponseEntity< List< List< Point > > > getLines( @PathVariable( "n" ) int n ) {
 
         return new ResponseEntity<>( calculator.execute( n ), HttpStatus.OK  );

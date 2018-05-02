@@ -28,7 +28,7 @@ public class Calculator {
 
                 Point p1 = space.get( i );
 
-                for( int j = i + 1; i < space.size(); j++ ) {
+                for( int j = i + 1; j < space.size(); j++ ) {
 
                     Point p2 = space.get( j );
                     points = new ArrayList<>();
@@ -67,7 +67,7 @@ public class Calculator {
 
                     }
 
-                    if( points.size() >= n && ! subpoints( result, points ) ) {
+                    if( points.size() >= n ) {
 
                         result.add( points );
 
@@ -92,19 +92,4 @@ public class Calculator {
 
     }
 
-    private boolean subpoints( List< List< Point > > result, List< Point > points ) {
-
-        for( List< Point > pointsResult : result ) {
-
-            if( pointsResult.containsAll( points ) ) {
-
-                return true;
-
-            }
-
-        }
-
-        return false;
-
-    }
 }
