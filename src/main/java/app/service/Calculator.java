@@ -17,33 +17,61 @@ public class Calculator {
         List< List< Point > > result = new ArrayList<>();
         List< Point > points;
 
-        for( int i = 0; i < space.size() - 1; i++ ) {
+        if( n <= 1 ) {
 
-            Point p1 = space.get( i );
+            return result;
 
-            for( int j = i + 1; j < space.size() - 1; j++ ) {
+        }
+        else if( n == 2 ) {
 
-                Point p2 = space.get( j );
-                points = new ArrayList<>();
+            for( int i = 0; i < space.size(); i++ ) {
 
-                points.add( p1 );
-                points.add( p2 );
+                Point p1 = space.get( i );
 
-                for( int k = j + 1; k < space.size() - 1; k++ ) {
+                for( int j = i + 1; i < space.size(); j++ ) {
 
-                    Point p3 = space.get( k );
-
-                    if( determinant( p1, p2, p3 ) == 0 ) {
-
-                        points.add( p3 );
-
-                    }
+                    Point p2 = space.get( j );
+                    points = new ArrayList<>();
+                    points.add( p1 );
+                    points.add( p2 );
+                    result.add( points );
 
                 }
 
-                if( points.size() >= n ) {
+            }
 
-                    result.add( points );
+        }
+        else {
+
+            for( int i = 0; i < space.size(); i++ ) {
+
+                Point p1 = space.get( i );
+
+                for( int j = i + 1; j < space.size(); j++ ) {
+
+                    Point p2 = space.get( j );
+                    points = new ArrayList<>();
+
+                    points.add( p1 );
+                    points.add( p2 );
+
+                    for( int k = j + 1; k < space.size(); k++ ) {
+
+                        Point p3 = space.get( k );
+
+                        if( determinant( p1, p2, p3 ) == 0 ) {
+
+                            points.add( p3 );
+
+                        }
+
+                    }
+
+                    if( points.size() >= n && ! subpoints( result, points ) ) {
+
+                        result.add( points );
+
+                    }
 
                 }
 
@@ -61,6 +89,22 @@ public class Calculator {
         double B = ( p3.getX() * p2.getY() ) + ( p2.getX() * p1.getY() ) + ( p1.getX() * p3.getY() );
 
         return A - B;
+
+    }
+
+    private boolean subpoints( List< List< Point > > result, List< Point > points ) {
+
+        for( List< Point > pointsResult : result ) {
+
+            if( pointsResult.containsAll( points ) ) {
+
+                return true;
+
+            }
+
+        }
+
+        return false;
 
     }
 }
